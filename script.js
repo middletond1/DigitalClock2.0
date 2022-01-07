@@ -1,11 +1,10 @@
-function getTime() {
+function getCurrentTime() {
     const date = new Date();
     return date;
 }
 
-
 function hours() {
-    let hours = getTime().getHours();
+    let hours = getCurrentTime().getHours();
     switch (hours) {
         case 13:
             hours = "1";
@@ -49,19 +48,54 @@ function hours() {
 }
 
 function minutes() {
-    let minutes = getTime().getMinutes();
+    let minutes = getCurrentTime().getMinutes();
     minutes = minutes.toString().padStart(2, '0');
     return minutes;
 }
 
 function seconds() {
-    let seconds = getTime().getSeconds();
+    let seconds = getCurrentTime().getSeconds();
     seconds = seconds.toString().padStart(2, '0');
     return seconds;
 }
 
+function day() {
+    let day = getCurrentTime().getDay();
+    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    day = weekday[day];
+    return day;
+}
+
+function month() {
+    let month = getCurrentTime().getMonth();
+    const calendarMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',];
+    month = calendarMonth[month];
+    return month;
+}
+
+function date() {
+    let date = getCurrentTime().getDate();
+    date = date.toString();
+    if (date.charAt(date.length - 1) === '1') {
+        date = date + 'st';
+    } else if (date.charAt(date.length - 1) === '2') {
+        date = date + 'nd';
+    } else if (date.charAt(date.length - 1) === '3') {
+        date = date + 'rd';
+    } else {
+        date = date + 'th';
+    }
+    return date;
+}
+
+function year() {
+    let year = getCurrentTime().getFullYear();
+    return year;
+}
+
+console.log(`The date today is ${day()}, ${month()} ${date()} ${year()}`);
+console.log(`The time is ${hours()}:${minutes()}:${seconds()}`);
+
 // setInterval('drawTime()', 500);
-console.log(hours());
-console.log(minutes());
-console.log(seconds());
+
 
