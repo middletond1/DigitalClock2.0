@@ -1,3 +1,6 @@
+const timeDisplay = document.querySelector('#time');
+const dateDisplay = document.querySelector('#date');
+
 function getCurrentTime() {
     const date = new Date();
     return date;
@@ -9,7 +12,7 @@ function hours() {
         case 13:
             hours = "1";
             break;
-        case 14:
+        case 14: 
             hours = '2';
             break;
         case 15:
@@ -93,9 +96,21 @@ function year() {
     return year;
 }
 
-console.log(`The date today is ${day()}, ${month()} ${date()} ${year()}`);
-console.log(`The time is ${hours()}:${minutes()}:${seconds()}`);
+function drawTime() {
+    while (timeDisplay.firstChild) {
+        timeDisplay.removeChild(timeDisplay.firstChild);
+    }
+    timeDisplay.appendChild(document.createTextNode(`${hours()}:${minutes()}:${seconds()}`));
+}
 
-// setInterval('drawTime()', 500);
+function drawDate() {
+    while (dateDisplay.firstChild) {
+        dateDisplay.removeChild(dateDisplay.firstChild);
+    }
+    dateDisplay.appendChild(document.createTextNode(`${day()}, ${month()} ${date()} ${year()}`));
+}
+
+setInterval('drawTime()', 1000);
+setInterval('drawDate()', 1000);
 
 
