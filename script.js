@@ -110,6 +110,8 @@ function drawDate() {
     dateDisplay.appendChild(document.createTextNode(`${day()}, ${month()} ${date()} ${year()}`));
 }
 
+drawTime();
+drawDate();
 setInterval('drawTime()', 1000);
 setInterval('drawDate()', 1000);
 
