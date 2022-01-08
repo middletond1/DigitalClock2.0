@@ -2,7 +2,7 @@
 
 ### A simple digital clock. Version 2.0, 
 
-#### View it [Here](https://middletond1.github.io/Calculator/)
+#### View it [Here](https://middletond1.github.io/DigitalClock2.0/)
 
 ![](https://github.com/middletond1/Calculator/blob/main/Images/2021-06-02%2016_21_22-Calculator.png)
 
