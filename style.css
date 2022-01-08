@@ -5,10 +5,10 @@ body {
 h1 {
     font-size: 60px;
     color: #5e001f;
-    padding-bottom: 150px;
 }
 
 h2 {
+    padding-top: 150px;
     font-size: 150px;
     color: #5e001f;
 }
