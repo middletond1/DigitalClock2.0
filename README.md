@@ -1,6 +1,6 @@
 # DigitalClock2.0
 
-### A simple digital clock. Version 2.0, 
+### A simple digital clock. 
 
 #### View it [Here](https://middletond1.github.io/DigitalClock2.0/)
 
