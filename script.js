@@ -9,8 +9,8 @@ function getCurrentTime() {
 function hours() {
     let hours = getCurrentTime().getHours();
     switch (hours) {
-        case 00:
-            hours = '1';
+        case 0:
+            hours = '12';
             break;
         case 13:
             hours = "1";
