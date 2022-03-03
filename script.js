@@ -75,13 +75,13 @@ function getMonth() {
 }
 
 function getDate() {
-    let date = getCurrentTime().getDate();
-    date = date.toString();
-    if (date.charAt(date.length - 1) === '1') {
+    let date = getCurrentTime().getDate().toString();
+    const dateOnesPlace = date.charAt(date.length - 1)
+    if (dateOnesPlace === '1') {
         date = date + 'st';
-    } else if (date.charAt(date.length - 1) === '2') {
+    } else if (dateOnesPlace === '2') {
         date = date + 'nd';
-    } else if (date.charAt(date.length - 1) === '3') {
+    } else if (dateOnesPlace === '3') {
         date = date + 'rd';
     } else {
         date = date + 'th';
