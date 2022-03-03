@@ -1,7 +1,7 @@
 const timeDisplay = document.querySelector('#time');
 const dateDisplay = document.querySelector('#date');
 
-function getCurrentTime() {
+function getDateObject() {
     const date = new Date();
     return date;
 }
