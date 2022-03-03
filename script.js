@@ -7,7 +7,7 @@ function getDateObject() {
 }
 
 function getHours() {
-    let hours = getCurrentTime().getHours();
+    let hours = getDateObject().getHours();
     switch (hours) {
         case 0:
             hours = '12';
@@ -53,29 +53,29 @@ function getHours() {
 }
 
 function getMinutes() {
-    let minutes = getCurrentTime().getMinutes();
+    let minutes = getDateObject().getMinutes();
     return minutes.toString().padStart(2, '0');;
 }
 
 function getSeconds() {
-    let seconds = getCurrentTime().getSeconds();
+    let seconds = getDateObject().getSeconds();
     return seconds.toString().padStart(2, '0');
 }
 
 function getDay() {
-    let day = getCurrentTime().getDay();
+    let day = getDateObject().getDay();
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return weekday[day];
 }
 
 function getMonth() {
-    let month = getCurrentTime().getMonth();
+    let month = getDateObject().getMonth();
     const calendarMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',];
     return calendarMonth[month];
 }
 
 function getDate() {
-    let date = getCurrentTime().getDate().toString();
+    let date = getDateObject().getDate().toString();
     const dateOnesPlace = date.charAt(date.length - 1)
     if (dateOnesPlace === '1') {
         date = date + 'st';
@@ -90,7 +90,7 @@ function getDate() {
 }
 
 function getYear() {
-    let year = getCurrentTime().getFullYear();
+    let year = getDateObject().getFullYear();
     return year;
 }
 
