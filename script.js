@@ -71,8 +71,7 @@ function day() {
 function month() {
     let month = getCurrentTime().getMonth();
     const calendarMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',];
-    month = calendarMonth[month];
-    return month;
+    return calendarMonth[month];
 }
 
 function date() {
