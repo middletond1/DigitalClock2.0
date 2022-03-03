@@ -6,7 +6,7 @@ function getCurrentTime() {
     return date;
 }
 
-function hours() {
+function getHours() {
     let hours = getCurrentTime().getHours();
     switch (hours) {
         case 0:
@@ -52,29 +52,29 @@ function hours() {
     return hours.toString().padStart(2, '0');;
 }
 
-function minutes() {
+function getMinutes() {
     let minutes = getCurrentTime().getMinutes();
     return minutes.toString().padStart(2, '0');;
 }
 
-function seconds() {
+function getSeconds() {
     let seconds = getCurrentTime().getSeconds();
     return seconds.toString().padStart(2, '0');
 }
 
-function day() {
+function getDay() {
     let day = getCurrentTime().getDay();
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return weekday[day];
 }
 
-function month() {
+function getMonth() {
     let month = getCurrentTime().getMonth();
     const calendarMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',];
     return calendarMonth[month];
 }
 
-function date() {
+function getDate() {
     let date = getCurrentTime().getDate();
     date = date.toString();
     if (date.charAt(date.length - 1) === '1') {
@@ -89,7 +89,7 @@ function date() {
     return date;
 }
 
-function year() {
+function getYear() {
     let year = getCurrentTime().getFullYear();
     return year;
 }
@@ -98,14 +98,14 @@ function drawTime() {
     while (timeDisplay.firstChild) {
         timeDisplay.removeChild(timeDisplay.firstChild);
     }
-    timeDisplay.appendChild(document.createTextNode(`${hours()}:${minutes()}:${seconds()}`));
+    timeDisplay.appendChild(document.createTextNode(`${getHours()}:${getMinutes()}:${getSeconds()}`));
 }
 
 function drawDate() {
     while (dateDisplay.firstChild) {
         dateDisplay.removeChild(dateDisplay.firstChild);
     }
-    dateDisplay.appendChild(document.createTextNode(`${day()}, ${month()} ${date()} ${year()}`));
+    dateDisplay.appendChild(document.createTextNode(`${getDay()}, ${getMonth()} ${getDate()} ${getYear()}`));
 }
 
 drawTime();
