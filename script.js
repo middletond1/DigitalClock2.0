@@ -49,27 +49,23 @@ function hours() {
             hours = '12';
             break;
     };
-    hours = hours.toString().padStart(2, '0');
-    return hours;
+    return hours.toString().padStart(2, '0');;
 }
 
 function minutes() {
     let minutes = getCurrentTime().getMinutes();
-    minutes = minutes.toString().padStart(2, '0');
-    return minutes;
+    return minutes.toString().padStart(2, '0');;
 }
 
 function seconds() {
     let seconds = getCurrentTime().getSeconds();
-    seconds = seconds.toString().padStart(2, '0');
-    return seconds;
+    return seconds.toString().padStart(2, '0');
 }
 
 function day() {
     let day = getCurrentTime().getDay();
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    day = weekday[day];
-    return day;
+    return weekday[day];
 }
 
 function month() {
