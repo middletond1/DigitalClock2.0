@@ -1,6 +1,3 @@
-const timeDisplay = document.querySelector('#time');
-const dateDisplay = document.querySelector('#date');
-
 function getDateObject() {
     const date = new Date();
     return date;
@@ -59,6 +56,7 @@ function getYear() {
 }
 
 function drawTime() {
+    const timeDisplay = document.querySelector('#time');
     while (timeDisplay.firstChild) {
         timeDisplay.removeChild(timeDisplay.firstChild);
     }
@@ -66,6 +64,7 @@ function drawTime() {
 }
 
 function drawDate() {
+    const dateDisplay = document.querySelector('#date');
     while (dateDisplay.firstChild) {
         dateDisplay.removeChild(dateDisplay.firstChild);
     }
