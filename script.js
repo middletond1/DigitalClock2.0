@@ -1,3 +1,29 @@
+drawDateAndTime()
+
+function drawDateAndTime() {
+    drawTime();
+    drawDate();
+    setInterval('drawTime()', 1000);
+    setInterval('drawDate()', 1000);
+}
+
+function drawTime() {
+    const timeDisplay = document.querySelector('#time');
+    while (timeDisplay.firstChild) {
+        timeDisplay.removeChild(timeDisplay.firstChild);
+    }
+    timeDisplay.appendChild(document.createTextNode(`${getHours()}:${getMinutes()}:${getSeconds()}`));
+}
+
+function drawDate() {
+    const dateDisplay = document.querySelector('#date');
+    while (dateDisplay.firstChild) {
+        dateDisplay.removeChild(dateDisplay.firstChild);
+    }
+    dateDisplay.appendChild(document.createTextNode(`${getDay()}, ${getMonth()} ${getDate()} ${getYear()}`));
+}
+
+
 function getDateObject() {
     const date = new Date();
     return date;
@@ -39,15 +65,15 @@ function getDate() {
     let date = getDateObject().getDate().toString();
     const dateOnesPlace = date.charAt(date.length - 1)
     if (dateOnesPlace === '1') {
-        date = date + 'st';
-    } else if (dateOnesPlace === '2') {
-        date = date + 'nd';
-    } else if (dateOnesPlace === '3') {
-        date = date + 'rd';
-    } else {
-        date = date + 'th';
+        return `${date}st`
     }
-    return date;
+    if (dateOnesPlace === '2') {
+        return `${date}nd`
+    }
+    if (dateOnesPlace === '3') {
+        return `${date}rd`
+    }
+        return `${date}th`
 }
 
 function getYear() {
@@ -55,25 +81,9 @@ function getYear() {
     return year;
 }
 
-function drawTime() {
-    const timeDisplay = document.querySelector('#time');
-    while (timeDisplay.firstChild) {
-        timeDisplay.removeChild(timeDisplay.firstChild);
-    }
-    timeDisplay.appendChild(document.createTextNode(`${getHours()}:${getMinutes()}:${getSeconds()}`));
-}
 
-function drawDate() {
-    const dateDisplay = document.querySelector('#date');
-    while (dateDisplay.firstChild) {
-        dateDisplay.removeChild(dateDisplay.firstChild);
-    }
-    dateDisplay.appendChild(document.createTextNode(`${getDay()}, ${getMonth()} ${getDate()} ${getYear()}`));
-}
 
-drawTime();
-drawDate();
-setInterval('drawTime()', 1000);
-setInterval('drawDate()', 1000);
+
+
 
 
